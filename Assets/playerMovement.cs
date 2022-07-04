@@ -20,11 +20,19 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#region Movement & Attacking Anim
+        if(am.GetBool("Attacking1"))
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        }
+#endregion
+
         am.SetBool("Jumping", !IsGrounded());
         // Sets the Jumping animation parameter to true if the player is not grounded
-
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        // This is moves the player left and right
 
         am.SetFloat("Speed", Mathf.Abs(horizontal));
         //This changes the animation to running animation
@@ -79,5 +87,33 @@ public class playerMovement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
         // This method is called every frame while the action is bound to a control
     }
-    
+
+    public void Roll(InputAction.CallbackContext context)
+    {
+        // This method is called when the roll button is pressed
+        if(context.performed)
+        {
+            speed = speed * 1.5f;
+            // This is to make the player move faster when the button is pressed
+            am.SetBool("Rolling", true);
+        }
+        if(context.canceled)
+        {
+            speed = speed / 1.5f;
+            am.SetBool("Rolling", false);
+        }
+    }
+
+    public void AttackOne(InputAction.CallbackContext context)
+    {
+        // This method is called when the attack button is pressed
+        if(context.performed)
+        {
+            am.SetBool("Attacking1", true);
+        }
+        if(context.canceled)
+        {
+            am.SetBool("Attacking1", false);
+        }
+    }
 }
