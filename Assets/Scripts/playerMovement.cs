@@ -12,6 +12,7 @@ public class playerMovement : MonoBehaviour
     public LayerMask groundLayer;
     public Animator am;
     public BoxCollider2D PlayerBodyCollider;
+    public GameObject pauseMenu;
 
     private float horizontal;
     private float speed = 8f;
@@ -119,4 +120,16 @@ public class playerMovement : MonoBehaviour
             am.SetBool("Attacking1", false);
         }
     }
+
+#region PauseGame
+    public void PauseGame(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+            // This pauses the game when the pause button is pressed
+        }
+    }
+#endregion
 }
