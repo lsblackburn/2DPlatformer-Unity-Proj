@@ -151,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.859375}
+  m_Offset: {x: -0.03387922, y: 0.3447821}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -162,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.125, y: 1.71875}
+  m_Size: {x: 0.7534579, y: 0.56181335}
   m_EdgeRadius: 0
 --- !u!114 &7608420959017521126
 MonoBehaviour:
@@ -222,46 +222,6 @@ MonoBehaviour:
     m_ActionId: 01d1b6d6-3999-4fb9-a162-db3af9adfee8
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4ab4b525-120b-421d-b945-481937a31094
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d0524c9b-b441-4cd4-9327-b80b043d5055
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e28017b7-9d0d-44f9-9647-041a14f85090
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9141cd71-c97b-404b-b9cf-1ebe75a8945f
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2b0b9798-628f-4893-845b-b70021809f56
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cd657ce5-aebe-4866-8bf5-b1a929cc06cd
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0c6ee5a6-95fb-47d1-ae55-2b2594517a77
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a2313300-b1c2-439b-a391-bc4ec514e012
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 96c99085-b51e-424f-81de-9127786fb25f
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e92d640b-cf06-440e-a64e-9c5a7fd5e77e
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7608420959017521129}
         m_TargetAssemblyTypeName: playerMovement, Assembly-CSharp
@@ -293,6 +253,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 63d261ee-f35c-4977-af88-8979e4a4e68e
     m_ActionName: Player/Attack1[/Mouse/leftButton,/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7608420959017521129}
+        m_TargetAssemblyTypeName: playerMovement, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f002bc93-0a9f-4af1-be2d-d52fb6eaca29
+    m_ActionName: Player/PauseGame[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -317,6 +293,7 @@ MonoBehaviour:
     m_Bits: 8
   am: {fileID: 7608420959017521123}
   PlayerBodyCollider: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!95 &7608420959017521123
 Animator:
   serializedVersion: 4
