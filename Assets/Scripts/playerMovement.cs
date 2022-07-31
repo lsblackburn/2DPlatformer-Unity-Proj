@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Animator am;
+    public BoxCollider2D PlayerBodyCollider;
 
     private float horizontal;
     private float speed = 8f;
@@ -96,11 +97,13 @@ public class playerMovement : MonoBehaviour
             speed = speed * 1.5f;
             // This is to make the player move faster when the button is pressed
             am.SetBool("Rolling", true);
+            PlayerBodyCollider.enabled = false;
         }
         if(context.canceled)
         {
             speed = speed / 1.5f;
             am.SetBool("Rolling", false);
+            PlayerBodyCollider.enabled = true;
         }
     }
 
