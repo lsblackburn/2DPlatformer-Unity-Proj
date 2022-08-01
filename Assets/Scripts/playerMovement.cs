@@ -107,16 +107,16 @@ public class playerMovement : MonoBehaviour
     public void Roll(InputAction.CallbackContext context)
     {
         // This method is called when the roll button is pressed
-        if(context.performed)
+        if(context.performed && horizontal != 0)
         {
-            speed = speed * 1.5f;
+            speed = 12f;
             // This is to make the player move faster when the button is pressed
             am.SetBool("Rolling", true);
             PlayerBodyCollider.enabled = false;
         }
-        if(context.canceled)
+        if(context.canceled || horizontal == 0)
         {
-            speed = speed / 1.5f;
+            speed = 8f;
             am.SetBool("Rolling", false);
             PlayerBodyCollider.enabled = true;
         }
