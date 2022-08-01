@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class startMenu : MonoBehaviour
 {
+
+    public GameObject ObstacleMode;
+    public GameObject StartMenu;
     
     public void StartGame()
     {
@@ -22,6 +25,18 @@ public class startMenu : MonoBehaviour
     {
         UnityEngine.Debug.Log("Application Quit");
         Application.Quit();
+    }
+
+    public void ObstacleCourseMap()
+    {
+        ObstacleMode.SetActive(true);
+        StartMenu.SetActive(false);
+    }
+
+    public void BackButton()
+    {
+        ObstacleMode.SetActive(false);
+        StartMenu.SetActive(true);
     }
 
 }

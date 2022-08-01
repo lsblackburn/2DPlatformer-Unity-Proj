@@ -269,6 +269,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f002bc93-0a9f-4af1-be2d-d52fb6eaca29
     m_ActionName: Player/PauseGame[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7608420959017521129}
+        m_TargetAssemblyTypeName: playerMovement, Assembly-CSharp
+        m_MethodName: Block
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f2537e46-f2c0-4109-a504-5e274a101733
+    m_ActionName: Player/Block[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -292,7 +308,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   am: {fileID: 7608420959017521123}
-  PlayerBodyCollider: {fileID: 0}
+  PlayerBodyCollider: {fileID: 7608420959017521127}
   pauseMenu: {fileID: 0}
 --- !u!95 &7608420959017521123
 Animator:

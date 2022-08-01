@@ -90,6 +90,20 @@ public class playerMovement : MonoBehaviour
         // This method is called every frame while the action is bound to a control
     }
 
+    public void Block(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            am.SetBool("Block", true);
+            //PlayerBodyCollider.enabled = false;
+        }
+        if(context.canceled)
+        {
+            am.SetBool("Block", false);
+            //PlayerBodyCollider.enabled = true;
+        }
+    }
+
     public void Roll(InputAction.CallbackContext context)
     {
         // This method is called when the roll button is pressed
