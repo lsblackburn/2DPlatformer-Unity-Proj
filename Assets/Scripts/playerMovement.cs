@@ -16,7 +16,7 @@ public class playerMovement : MonoBehaviour
 
     private float horizontal;
     private float speed = 8f;
-    private float jumpForce = 8f;
+    private float jumpForce = 10f;
     private bool isFacingRight = true;
 #endregion
     // Update is called once per frame
