@@ -107,7 +107,7 @@ public class playerMovement : MonoBehaviour
     public void Roll(InputAction.CallbackContext context)
     {
         // This method is called when the roll button is pressed
-        if(context.performed && horizontal != 0)
+        if(context.performed && horizontal != 0 && IsGrounded())
         {
             speed = 12f;
             // This is to make the player move faster when the button is pressed
