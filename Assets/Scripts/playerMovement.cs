@@ -10,7 +10,7 @@ public class playerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public Animator am;
+    public Animator animator;
     public BoxCollider2D PlayerBodyCollider;
     public GameObject pauseMenu;
 
@@ -23,7 +23,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
 #region Movement & Attacking Anim
-        if(am.GetBool("Attacking1"))
+        if(animator.GetBool("Attacking1"))
         {
             rb.velocity = Vector2.zero;
         }
@@ -33,10 +33,10 @@ public class playerMovement : MonoBehaviour
         }
 #endregion
 
-        am.SetBool("Jumping", !IsGrounded());
+        animator.SetBool("Jumping", !IsGrounded());
         // Sets the Jumping animation parameter to true if the player is not grounded
 
-        am.SetFloat("Speed", Mathf.Abs(horizontal));
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
         //This changes the animation to running animation
 
 #region Flip Sprite
@@ -59,7 +59,7 @@ public class playerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             // This is to make the player jump when the jump button is pressed
             // and the player is on the ground
-            am.SetBool("Jumping", true);
+            animator.SetBool("Jumping", true);
         }
 
         if (context.canceled)
@@ -94,12 +94,12 @@ public class playerMovement : MonoBehaviour
     {
         if(context.performed)
         {
-            am.SetBool("Block", true);
+            animator.SetBool("Block", true);
             //PlayerBodyCollider.enabled = false;
         }
         if(context.canceled)
         {
-            am.SetBool("Block", false);
+            animator.SetBool("Block", false);
             //PlayerBodyCollider.enabled = true;
         }
     }
@@ -111,27 +111,14 @@ public class playerMovement : MonoBehaviour
         {
             speed = 12f;
             // This is to make the player move faster when the button is pressed
-            am.SetBool("Rolling", true);
+            animator.SetBool("Rolling", true);
             PlayerBodyCollider.enabled = false;
         }
         if(context.canceled || horizontal == 0)
         {
             speed = 8f;
-            am.SetBool("Rolling", false);
+            animator.SetBool("Rolling", false);
             PlayerBodyCollider.enabled = true;
-        }
-    }
-
-    public void AttackOne(InputAction.CallbackContext context)
-    {
-        // This method is called when the attack button is pressed
-        if(context.performed)
-        {
-            am.SetBool("Attacking1", true);
-        }
-        if(context.canceled)
-        {
-            am.SetBool("Attacking1", false);
         }
     }
 

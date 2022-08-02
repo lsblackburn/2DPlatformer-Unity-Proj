@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        // Sets the max health of the player health bar at the start of the game
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if (context.performed)
         {
             TakeDamage();
+            // Function to test taking damage on player
         }
     }
 
@@ -30,5 +32,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= 10;
         healthBar.SetHealth(currentHealth);
+        // Function to take damage
     }
 }
