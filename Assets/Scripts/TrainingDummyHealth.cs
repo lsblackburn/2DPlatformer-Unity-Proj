@@ -40,5 +40,6 @@ public class TrainingDummyHealth : MonoBehaviour
         this.enabled = false;
         bodyCollider.enabled = false;
         headCollider.enabled = false;
+        // When the training dummy dies, it will disable the colliders
     }
 }
