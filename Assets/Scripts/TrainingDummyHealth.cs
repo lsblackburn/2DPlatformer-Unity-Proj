@@ -9,6 +9,8 @@ public class TrainingDummyHealth : MonoBehaviour
     public int maxHealth = 5;
     public int currentHealth;
     public HealthBar healthBar;
+    public Collider2D bodyCollider;
+    public Collider2D headCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class TrainingDummyHealth : MonoBehaviour
         // Function to handle enemy death
         animator.SetBool("IsDead", true);
         this.enabled = false;
-        GetComponent<Collider2D>().enabled = false;
+        bodyCollider.enabled = false;
+        headCollider.enabled = false;
     }
 }
